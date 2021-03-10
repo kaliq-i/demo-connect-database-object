@@ -31,14 +31,15 @@ const connectToDatabaseAndReturnRowsOfASpecificTable = async () => {
     //here I am querying the database using an SQL command
     const res = await client.query(`SELECT * FROM ${process.env.TABLE}`);
 
-    // here I am returning the rows from the table artists 
+    // here I am returning the rows from the table artists
+    // (because my env variable for table is artists) 
     return res.rows;
 };
 
 // express app initialised
 const app = express();
 
-// route for localhost:4000/here
+// route for localhost:4000/seeResults
 app.get("/seeResults", async (req, res) => {
 
     // the rows in the table called artists from the database called musicbase are returned
